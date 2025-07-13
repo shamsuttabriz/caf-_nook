@@ -1,10 +1,9 @@
-import { useState } from "react";
+
 import { useLoaderData } from "react-router";
 import CoffeeCard from "./CoffeeCard";
 
 const Home = () => {
-  const { data } = useLoaderData();
-  const [coffees, setCoffees] = useState(data || []);
+  const { data: coffees } = useLoaderData();
 
   console.log(coffees);
   return (

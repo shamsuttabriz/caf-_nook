@@ -14,6 +14,7 @@ import AuthProvider from "./contexts/AuthProvider.jsx";
 import axios from "axios";
 import MyAddedCoffees from "./components/MyAddedCoffees.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
+import MyOrders from "./components/MyOrders.jsx";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddCoffee />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "my-orders",
+        element: (
+          <PrivateRoute>
+            <MyOrders />
           </PrivateRoute>
         ),
       },

@@ -24,10 +24,6 @@ const CoffeeDetails = () => {
 
   const [liked, setLiked] = useState(likeBy.includes(user?.email));
   const [likeCount, setLikeCount] = useState(0);
-  console.log("Like Count", likeCount);
-
-  console.log("Is Liked", liked);
-  console.log(coffee);
 
   useEffect(() => {
     setLikeCount(likeBy.includes(user?.email));
@@ -72,6 +68,8 @@ const CoffeeDetails = () => {
         console.log(data);
         setCoffee((prev) => {
           return { ...prev, quantity: prev.quantity - 1 };
+        }).catch((err) => {
+          console.log(err);
         });
       });
   };
